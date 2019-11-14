@@ -12,7 +12,33 @@
 * 基于摄像技术的点云获取设备：RGBD设备（深度摄像机）常用来获取点云的设备。比如PrimeSense公司的PrimeSensor、微软的Kinect、华硕的XTionPRO。<br>
 * 点云的属性：空间分辨率、点位精度、表面法向量等。<br>
 * 点云存储格式：*.pts; *.asc ; *.dat; .stl ; [1] .imw；.xyz；.las。<br>
-* 一般将点云图像处理分为三个层次:<br>1) 低层次包括图像强化，滤波，关键点/边缘检测等基本操作。<br>2) 中层次包括连通域标记（label），图像分割等操作。<br>3) 高层次包括物体识别，场景分析等操作。工程中的任务往往需要用到多个层次的图像处理手段。<br>PCL官网对点云处理方法给出了较为明晰的层次划分：![]()
+* 一般将点云图像处理分为三个层次:<br>1) 低层次包括图像强化，滤波，关键点/边缘检测等基本操作。<br>2) 中层次包括连通域标记（label），图像分割等操作。<br>3) 高层次包括物体识别，场景分析等操作。工程中的任务往往需要用到多个层次的图像处理手段。<br>PCL官网对点云处理方法给出了较为明晰的层次划分：![](https://github.com/muyizaozao/Point-cloud-registration/blob/master/photo.png)<br>
+## 点云配准的常规处理方法<br>
+---
+* 低层次处理方法:<br>
+①滤波方法：双边滤波、高斯滤波、条件滤波、直通滤波、随机采样一致性滤波。<br>②关键点：ISS3D、Harris3D、NARF，SIFT3D
+* 中层次处理方法：<br>
+①特征描述：法线和曲率的计算、特征值分析、SHOT、PFH、FPFH、3D Shape Context、Spin Image<br>
+②分割与分类：<br>
+  * 分割：区域生长、Ransac线面提取、全局优化平面提取
+　　　K-Means、Normalize Cut（Context based）
+　　　3D Hough Transform(线、面提取)、连通分析。<br>
+  * 分类：基于点的分类，基于分割的分类，基于深度学习的分类（PointNet，OctNet）
+* 高层次处理方法：<br>
+①配准：点云配准分为粗配准（Coarse Registration）和精配准（Fine Registration）两个阶段。<br>
+  * 精配准的目的是在粗配准的基础上让点云之间的空间位置差别最小化。应用最为广泛的精配准算法应该是ICP以及ICP的各种变种（稳健ICP、point to plane ICP、Point to line ICP、MBICP、GICP、NICP）。<br>
+  * 粗配准是指在点云相对位姿完全未知的情况下对点云进行配准，可以为精配准提供良好的初始值。当前较为普遍的点云自动粗配准算法包括基于穷举搜索的配准算法和基于特征匹配的配准算法。<br>
+    * 基于穷举搜索的配准算法：遍历整个变换空间以选取使误差函数最小化的变换关系或者列举出使最多点对满足的变换关系。如RANSAC配准算法、四点一致集配准算法（4-Point Congruent Set, 4PCS）、Super4PCS算法等……
+    * 基于特征匹配的配准算法：通过被测物体本身所具备的形态特性构建点云间的匹配对应，然后采用相关算法对变换关系进行估计。如基于点FPFH特征的SAC-IA、FGR等算法、基于点SHOT特征的AO算法以及基于线特征的ICL等…
+    <br>
+  ②SLAM图优化<br>
+    Ceres（Google的最小二乘优化库，很强大）， g2o、LUM、ELCH、Toro、SPA.<br>
+    SLAM方法：ICP、MBICP、IDC、likehood Field、NDT<br>
+  ③三维重建<br>
+  泊松重建、 Delaunay triangulations、表面重建，人体重建，建筑物重建，树木重建。结构化重建：不是简单的构建一个Mesh网格，而是为场景进行分割，为场景结构赋予语义信息。场景结构有层次之分，在几何层次就是点线面。实时重建：重建植被或者农作物的4D（3D+时间）生长态势；人体姿势识别；表情识别；<br>
+④点云数据管理：点云压缩，点云索引（KD、Octree），点云LOD（金字塔），海量点云的渲染。<br>
+## 点云配准在三维重建流程中的位置：<br>
+
 
 # 本存储库收集：
 -----
