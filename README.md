@@ -49,11 +49,11 @@ https://blog.csdn.net/pdw521/article/details/82492428
 
 # 本存储库收集：<br>
 -----
-书籍和文献<br>
-在线课程和视频<br>
-离群数据集<br>
-开源和商业图书馆/工具包<br>
-重点会议和期刊<br>
+* 书籍和文献<br>
+* 课程和博客<br>
+* 数据集<br>
+* 开源工具包<br>
+* 重点会议和期刊<br>
 `注`：由于作者仍处于学习阶段，知识浅薄，所以有错误请指正，作者将会持续扩充本库内容，谢谢！<br>
 
 ### 书籍和文献<br>
@@ -111,6 +111,10 @@ MeshLab可用于各种学术和研究环境，如微生物学、文化遗产及�
        链接：https://github.com/avsegal/gicp<br>
    5）n-icp<br>
 链接：http://jacoposerafin.com/nicp/<br>
+### 重点会议与期刊<br>
+点云配准主要应用于工业制造业的逆向工程、古文物修复、医学三维图像构建等领域。研究内容是属于计算机视觉领域的研究范畴。国际上的会议如计算机视觉三大顶会ICCV、CVPR、ECCV等都会有相关技术，除此之外，还有ACCV、BMVC、SSVM等认可度也比较高。<br>
+期刊的话，IEEE旗下的TPAMI，TIP等，还有SIAM Journal Image Sciences，Springer那边有IJCV。
+
 
 
 
