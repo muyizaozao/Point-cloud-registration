@@ -38,6 +38,8 @@
   泊松重建、 Delaunay triangulations、表面重建，人体重建，建筑物重建，树木重建。结构化重建：不是简单的构建一个Mesh网格，而是为场景进行分割，为场景结构赋予语义信息。场景结构有层次之分，在几何层次就是点线面。实时重建：重建植被或者农作物的4D（3D+时间）生长态势；人体姿势识别；表情识别；<br>
 ④点云数据管理：点云压缩，点云索引（KD、Octree），点云LOD（金字塔），海量点云的渲染。<br>
 ## 点云配准在三维重建流程中的位置：<br>
+![](https://github.com/muyizaozao/Point-cloud-registration/blob/master/123.png)<br>
+注：以上资料参考：https://blog.csdn.net/hongju_tang/article/details/85008888
 
 
 # 本存储库收集：
