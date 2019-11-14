@@ -39,12 +39,17 @@
 ④点云数据管理：点云压缩，点云索引（KD、Octree），点云LOD（金字塔），海量点云的渲染。<br>
 ## 点云配准在三维重建流程中的位置：<br>
 ![](https://github.com/muyizaozao/Point-cloud-registration/blob/master/123.png)<br>
-注：以上资料参考：https://blog.csdn.net/hongju_tang/article/details/85008888
+注：以上资料参考：https://blog.csdn.net/hongju_tang/article/details/85008888<br>
+其他资料请参见：<br>
+1.	关于三维计算机视觉的研究内容：<br>
+https://www.cnblogs.com/yhlx125/p/4952522.html<br>
+2.	关于点云数据处理方法：（三维计算机视觉中点云数据处理面对的问题，主要方法和技术，概述其特点。）<br>
+https://blog.csdn.net/pdw521/article/details/82492428
 
 
-# 本存储库收集：
+# 本存储库收集：<br>
 -----
-书籍和学术论文<br>
+书籍和文献<br>
 在线课程和视频<br>
 离群数据集<br>
 开源和商业图书馆/工具包<br>
@@ -52,3 +57,61 @@
 `注`：由于作者仍处于学习阶段，知识浅薄，所以有错误请指正，作者将会持续扩充本库内容，谢谢！<br>
 
 ### 书籍和文献<br>
+-----
+书籍：由于纯粹的点云配准技术发展的并不是很成熟，所以关于点云配准的书籍目前很少，我了解的书籍只有一本国防工业出版社的《点云数据配准及曲面细分技术》讲解了点云配准的相关技术，但主要内容稍显过时，适合没有基础的小白看看，参考意义不多。<br>
+笔者主要还是从博客和硕士博士论文中学习。
+<br>文献：<br>
+1.	朱琛琛. 基于ICP算法的点云配准研究[D]. 2019.（注：基于摄像技术的点云配准）<br>
+2.	点云配准若干问题研究[D].2018.  （注：基于雷达激光的点云配准）<br>
+3.	Besl P J , Mckay H D . A method for registration of 3-D shapes[J]. IEEE Transactions on Pattern Analysis and Machine Intelligence, 1992, 14(2):0-256.<br>
+4.	Aiger D , Mitra N J , Cohen-Or D . 4-points congruent sets for robust pairwise surface registration[J]. ACM Transactions on Graphics, 2008, 27(3):1.<br>
+5.	Automatic registration of large-scale urban scene point clouds based on semantic feature points[J]. ISPRS Journal of Photogrammetry and Remote Sensing, 2016, 113:43-58.<br>
+### 课程与博客<br>
+-----
+1）点云配准算法的说明与流程介绍：<br>
+https://blog.csdn.net/Ha_ku/article/details/79755623<br>
+2）几种点云配准算法的方法的介绍与比较：<br>
+https://blog.csdn.net/weixin_43236944/article/details/88188532<br>
+3）三维点云用机器学习的方法进行处理：<br>
+https://blog.csdn.net/u014636245/article/details/82755966<br>
+4）以一个例子详细介绍了点云配准的过程：<br>
+https://www.zhihu.com/question/34170804<br>
+### 数据集<br>
+-----
+1.	The Stanford 3D Scanning Repository（斯坦福大学的3 d扫描存储库）<br>
+链接：http://graphics.stanford.edu/data/3Dscanrep/<br>
+这应该是做点云数据最初大家用最多的数据集，其中包含最开始做配准的Bunny、Happy Buddha、Dragon等模型。<br>
+2.	Shapenet<br>
+ShapeNet是一个丰富标注的大规模点云数据集，其中包含了55中常见的物品类别和513000个三维模型。<br>
+3.	The KITTI Vision Benchmark Suite<br>
+链接：http://www.cvlibs.net/datasets/kitti/<br>
+这个数据集来自德国卡尔斯鲁厄理工学院的一个项目，其中包含了利用KIT的无人车平台采集的大量城市环境的点云数据集（KITTI），这个数据集不仅有雷达、图像、GPS、INS的数据，而且有经过人工标记的分割跟踪结果，可以用来客观的评价大范围三维建模和精细分类的效果和性能。<br>
+4.	Robotic 3D Scan Repository<br>
+链接：http://kos.informatik.uni-osnabrueck.de/3Dscans/<br>
+这个数据集比较适合做SLAM研究，包含了大量的Riegl和Velodyne雷达数据<br>
+5.	佐治亚理工大型几何模型数据集<br>
+链接：https://www.cc.gatech.edu/projects/large_models/<br>
+6.	PASCAL3D+<br>
+链接：http://cvgl.stanford.edu/projects/pascal3d.html<br>
+包含了12中刚体分类，每一类超过了3000个实例。并且包含了对应的imageNet中每一类的图像。<br>
+7.	还有其他的数据集下面有更全面的总结：<br>
+链接：https://github.com/timzhang642/3D-Machine-Learning<br>
+### 开源工具<br>
+1.	MeshLab<br>
+简介：是一款开源、可移植和可扩展的三维几何处理系统。主要用于处理和编辑3D三角网格，它提供了一组用于编辑、清理、修复、检查、渲染、纹理化和转换网格的工具。提供了处理由3D数字化工具/设备生成的原始数据以及3D打印功能，功能全面而且丰富。MeshLab支持多数市面上常见的操作系统，包括Windows、Linux及Mac OS X，支持输入/输出的文件格式有：STL 、OBJ 、 VRML2.0、U3D、X3D、COLLADA
+MeshLab可用于各种学术和研究环境，如微生物学、文化遗产及表面重建等。<br>
+2.	几个ICP开源库<br>
+1）	SLAM6D<br>
+链接：http://slam6d.sourceforge.net/<br>
+2）	Libicp<br>
+链接：http://www.cvlibs.net/software/libicp/<br>
+3）	libpointmatcher<br>
+链接：https://github.com/ethz-asl/libpointmatcher<br>
+   4）g-icp<br>
+       链接：https://github.com/avsegal/gicp<br>
+   5）n-icp<br>
+链接：http://jacoposerafin.com/nicp/<br>
+
+
+
+
